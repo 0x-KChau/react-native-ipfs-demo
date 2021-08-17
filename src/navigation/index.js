@@ -6,6 +6,7 @@ import IdScreen from '../screens/id';
 import AddScreen from '../screens/add';
 import GetScreen from '../screens/get';
 import CatScreen from '../screens/cat';
+import CameraScreen from '../screens/camera';
 import PubsubScreen from '../screens/pubsub';
 
 const Stack = createStackNavigator();
@@ -16,6 +17,11 @@ const AppStack = () => (
       name="Home"
       component={HomeScreen}
       options={{title: 'IPFS Demo'}}
+    />
+    <Stack.Screen
+      name="Camera"
+      component={CameraScreen}
+      options={{title: 'Camera'}}
     />
     <Stack.Screen
       name="Id"

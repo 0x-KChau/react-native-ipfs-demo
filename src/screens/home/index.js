@@ -14,22 +14,22 @@ const runGenerator = () => {
   }
 };
 
-const runAsyncGenerator = async () => {
-  const generator = async function* () {
-    const stream = Array(5)
-      .fill()
-      .map((_, i) => i);
+// const runAsyncGenerator = async () => {
+//   const generator = async function* () {
+//     const stream = Array(5)
+//       .fill()
+//       .map((_, i) => i);
 
-    for (const i of stream) {
-      await new Promise((resolve) => setTimeout(resolve, 50));
-      yield i;
-    }
-  };
+//     for (const i of stream) {
+//       await new Promise((resolve) => setTimeout(resolve, 50));
+//       yield i;
+//     }
+//   };
 
-  for await (const i of generator()) {
-    console.log(`asyncGenerator: ${i}`);
-  }
-};
+//   for await (const i of generator()) {
+//     console.log(`asyncGenerator: ${i}`);
+//   }
+// };
 
 const runAsyncGenerator2 = async () => {
   const generator = async function* () {
@@ -154,6 +154,9 @@ const consoleWarnTest = () => {
 const HomeScreen = ({navigation}) => {
   return (
     <View>
+      <Button mode="contained" onPress={() => navigation.navigate('Camera')}>
+        Camera
+      </Button>
       <Button mode="contained" onPress={() => navigation.navigate('Id')}>
         ipfs.id()
       </Button>
