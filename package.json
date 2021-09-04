@@ -25,6 +25,9 @@
     "postinstall": "npm run pods && npm run patch:rn && npm run patch:ipfs"
   },
   "dependencies": {
+    "@cosmjs/proto-signing": "^0.26.0",
+    "@cosmjs/stargate": "^0.26.0",
+    "@likecoin/iscn-message-types": "^0.0.1",
     "@react-native-community/cameraroll": "^4.0.4",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.3",

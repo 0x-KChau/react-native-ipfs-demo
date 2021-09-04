@@ -134,12 +134,41 @@ const addPhoto = (photo, client) => async () => {
     const result = await client.add(file, options);
     console.log(
       `result --> ${result}`,
-      result[0],
-      result.cid,
-      result.cid.toString(),
+      result?.[0],
+      result?.cid,
+      result?.cid?.toString(),
     );
-    const url = `https://ipfs.io/ipfs/${result.cid.toString()}`;
-    console.log(`Url --> ${url}`);
+    const url = `https://ipfs.io/ipfs/${result?.cid?.toString()}`;
+    console.log('url', url);
+
+    // const payload = {
+    //   title: '0xNan Demo',
+    //   description: 'This is a description',
+    //   tagsString: 'article',
+    //   url: 'https://nnkken.github.io/post/recursive-relation/',
+    //   license: 'https://creativecommons.org/licenses/by/4.0',
+    //   ipfsHash: `ipfs://${result.cid.toString()}`,
+    //   // fileSHA256: 'hash://sha256/9564b85669d5e96ac969dd0161b8475bbced9e5999c6ec598da718a3045d6f2e',
+    //   authorNames: '0xNan',
+    //   authorUrls: 'http://github.com/0xNan',
+    // };
+
+    // const address = 'cosmos135h665npk02kn99mayfwr77m44y9ruqq4ua9tc'; // digital ocean node address
+    // // const address = "cosmos1uqfcn4ppzlnus9cc5u5jekj2wrjexrs0c5gjs6"; // local node address
+    // const res = await fetch('http://localhost:3001/signTxn', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({payload, address}),
+    // });
+
+    // console.log('res', res);
+
+    // signISCNTx(payload, address);
+
+    // console.log(`Url --> ${url}`);
   } catch (error) {
     console.error('Demo App .add photo', {error});
   }
